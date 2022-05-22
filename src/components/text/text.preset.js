@@ -1,21 +1,21 @@
-import colors from '../../theme/colors';
+import { colors } from "../../theme/colors";
 import { typography } from "../../theme/typography";
 
 const BASE = {
     fontFamily: typography.primary,
     fontSize: 16,
-    fontColor: colors.white
+    color: colors.white
 };
 
 const BASE_BOLD = {
     fontFamily: typography.primaryBold,
     fontSize: 16,
-    fontColor: colors.white,
+    color: colors.white,
 };
 
 const BOLD = {
     fontFamily: typography.bold,
-    fontColor: colors.white,
+    color: colors.white,
 };
 
 export const presets = {
