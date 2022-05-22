@@ -1,6 +1,6 @@
 import { AntDesign } from '@expo/vector-icons'
 import React from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, Pressable, StyleSheet, View } from 'react-native'
 import PlanetHeader from '../components/planet-header'
 import Text from '../components/text/text'
 import { PLANET_LIST } from '../data/planet-list'
@@ -8,7 +8,7 @@ import { colors } from '../theme/colors'
 import { spacing } from '../theme/spacing'
 
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
         <PlanetHeader />
@@ -19,13 +19,13 @@ export default function Home() {
             renderItem={({item, index}) => {
                 const { name, color } = item
                 return(
-                    <View style={styles.item}>
+                    <Pressable onPress={() => navigation.navigate('Details')} style={styles.item}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={[styles.circle, { backgroundColor: color }]} />
                             <Text preset='h4' style={styles.itemName}>{name}</Text>
                         </View>
                         <AntDesign name="right" size={18} color="white" />
-                    </View>
+                    </Pressable>
                 );
             }}
             ItemSeparatorComponent={() => <View style={styles.separator} />}

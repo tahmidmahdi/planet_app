@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native-web';
 import Text from './src/components/text/text';
+import Details from './src/screens/details';
 import Home from './src/screens/home';
 
 const Stack = createNativeStackNavigator();
@@ -26,6 +27,7 @@ export default function App() {
       <NavigationContainer theme={DarkTheme}>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Details" component={Details} />
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="light" />
